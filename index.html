@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сайт для тестирования по курсу визуализация данных</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body class="scroll-enabled">
+  <div class="container">
+
+<h1 style="text-align: center; margin-bottom: 40px; color: #2d234f; font-family: 'MyCustomFont'; font-size: 55px;">
+  Создай тест и проверь себя сам по визуализации данных!
+</h1>
+
+    <div class="form-box">
+      <label for="questionCount">Количество вопросов</label>
+      <input type="number" id="questionCount" min="1" max="10" value="3" />
+
+      <label for="answerType">Тип ответа</label>
+      <select id="answerType">
+        <option value="single">Одиночный</option>
+        <option value="multiple">Множественный</option>
+        <option value="combined">Комбинированный</option>
+      </select>
+
+      <label for="difficulty">Сложность вопросов</label>
+      <select id="difficulty">
+        <option value="easy">Легкие</option>
+        <option value="medium" selected>Средние</option>
+        <option value="hard">Сложные</option>
+      </select>
+
+      <button id="createTestBtn">Создать тест</button>
+      
+    </div>
+
+    <div id="loading" style="display:none;" style="font-family: 'MyCustomFont'; font-size: 55px;">Генерируем...</div>
+
+    <form id="quizContainer"></form>
+
+    <div class="inner-chart">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <button id="checkBtn" type="button">Проверить</button>
+
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

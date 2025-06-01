@@ -1,0 +1,212 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('fonts/OffBit-Bold.ttf') format('truetype');
+}
+
+html, body {
+      height: 100%;
+      margin: 0; padding: 0;
+      overflow: hidden;
+    }
+    body.scroll-enabled {
+      overflow: auto;
+    }
+body {
+      min-height: 100vh;
+      width: 100vw;
+      background: url('../Site/img/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #222;
+      overflow-x: hidden; /* Запрет прокрутки */
+      position: relative;
+    }
+
+    .container {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 12px 60px;
+      box-sizing: border-box;
+    }
+    .form-box {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 0 24px 0 #b4a6e7;
+      padding: 32px 32px 32px 32px;
+      min-width: 420px;
+      max-width: 96vw;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 38px;
+      box-sizing: border-box;
+    }
+    .form-box label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2d234f;
+    }
+    .form-box input[type="number"],
+    .form-box select {
+      width: 100%;
+      padding: 12px 12px;
+      font-size: 1.08rem;
+      border: 1.5px solid #7766C6;
+      border-radius: 8px;
+      background: #FBFAFF;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 0;
+      color: #2d234f;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .form-box input[type="number"]:focus,
+    .form-box select:focus {
+      border-color: #7766C6;
+    }
+    .form-box button {
+      margin-top: 10px;
+      padding: 12px 0;
+      width: 100%;
+      background: #7766C6;
+      color: #fff;
+      font-size: 1.13rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px #E0DFFE;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-sizing: border-box;
+    }
+    .form-box button:hover {
+      background: #46467A;
+    }
+    #loading {
+      font-family: 'MyCustomFont';
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #FBFAFF;
+      margin-bottom: 24px;
+      margin-top: 16px;
+      min-height: 32px;
+      letter-spacing: 1px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #quizContainer {
+      width: 100%;
+      max-width: 1070px;
+      margin: auto 24px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-sizing: border-box;
+    }
+    .question-block {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 50px 30px 50px;
+      margin-bottom: 0;
+      box-shadow: 0 0 24px 0 #E0DFFE;
+      border: 2px solid transparent;
+      transition: .4s;
+      width: 100%;
+      max-width: 1070px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+    .question-block.required {
+      border-color: #ff4f4f;
+      animation: shake 0.4s;
+    }
+
+    .question-text {
+      color: #2d234f;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: justify;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    .options {
+      overflow-y: auto;
+      flex-grow: 1;
+      box-sizing: border-box;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      margin-bottom: 10px;
+      transition: background-color 0.3s, border-color 0.3s;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    .options label:hover:not(.correct):not(.incorrect) {
+      background-color: transparent;
+    }
+    .options input[type="radio"],
+    .options input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #7c6ee6;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .correct {
+      background-color: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724;
+    }
+    .incorrect {
+      background-color: #f8d7da !important;
+      border-color: #dc3545 !important;
+      color: #721c24;
+    }
+    .inner-chart {
+      margin: 50px auto 0;
+      height: 483;
+      width: auto;
+    }
+
+    #checkBtn {
+      background-color: #F7941D;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.13rem;
+      padding: 12px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      margin: 32px auto 60px auto;
+      display: none;
+      transition: background 0.2s;
+      box-shadow: 0 2px 10px #ffb348;
+      box-sizing: border-box;
+    }
+    #checkBtn:hover {
+      background-color: #bb7117;
+    }
+    
