@@ -76,7 +76,7 @@ const intervalId = setInterval(changePhrase, 5000);
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
